@@ -9,7 +9,13 @@ const Photo = ({ className, img }) => {
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
     >
-      <img src={img.url} className='image-grid' />
+      {isHovered && (
+        <>
+          <i className='ri-heart-line favorite-icon' />
+          <i className='ri-add-circle-line cart-icon' />
+        </>
+      )}
+      <img alt='' src={img.url} className='image-grid' />
     </div>
   );
 };

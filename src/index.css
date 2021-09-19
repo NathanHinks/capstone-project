@@ -88,8 +88,8 @@ img.image-grid {
   position: relative;
 }
 
-.favorite-logo {
-  color: var(--accent);
+.favorite-icon {
+  color: var(--light);
   font-size: 1.2rem;
   position: absolute;
   top: 5px;
@@ -107,7 +107,7 @@ img.image-grid {
   cursor: pointer;
 }
 
-.cart-logo {
+.cart-icon {
   color: var(--light);
   font-size: 1.2rem;
   position: absolute;
