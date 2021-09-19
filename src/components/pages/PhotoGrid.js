@@ -6,7 +6,6 @@ import Photo from '../Photo';
 const PhotoGrid = () => {
   const { photos } = useContext(AppContext);
 
-  console.log(photos);
   return (
     <main className='photos'>
       {photos.map((photo, i) => (

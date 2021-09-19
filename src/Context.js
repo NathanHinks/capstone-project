@@ -1,5 +1,6 @@
+import * as R from 'ramda';
 import React, { useEffect, useState } from 'react';
-import { getPhotos } from './utils';
+import { getPhotos, updateFavorite } from './utils';
 
 const AppContext = React.createContext();
 
@@ -10,9 +11,14 @@ const AppContextProvider = ({ children }) => {
     getPhotos(setPhotos);
   }, []);
 
+  const updateIsFavorite = (id, value) =>
+    R.compose(setPhotos, updateFavorite(id, value))(photos);
+
   return (
     photos && (
-      <AppContext.Provider value={{ photos }}>{children}</AppContext.Provider>
+      <AppContext.Provider value={{ photos, updateIsFavorite }}>
+        {children}
+      </AppContext.Provider>
     )
   );
 };
