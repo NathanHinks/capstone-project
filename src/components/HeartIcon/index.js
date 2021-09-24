@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import { useContext } from 'react';
+import PropTypes from 'prop-types'
 import { AppContext } from '../../Context';
 
 const HeartIcon = (props) => {
@@ -18,5 +19,10 @@ const HeartIcon = (props) => {
       ])(props)
   )
 };
+
+HeartIcon.propTypes = {
+  img: PropTypes.object.isRequired,
+  isHovered: PropTypes.bool.isRequired
+}
 
 export default HeartIcon;

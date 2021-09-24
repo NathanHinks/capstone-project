@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import useHover from '../../hooks/useHover';
 import PhotoIcons from '../PhotoIcons';
 
@@ -15,5 +16,10 @@ const Photo = ({ className, img }) => {
     </div>
   );
 };
+
+Photo.propTypes = {
+  className: PropTypes.string.isRequired,
+  img: PropTypes.object.isRequired
+}
 
 export default Photo;

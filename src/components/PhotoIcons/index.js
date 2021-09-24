@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import HeartIcon from '../HeartIcon';
 
 const PhotoIcons = ({ img, isHovered }) => {
@@ -9,5 +10,10 @@ const PhotoIcons = ({ img, isHovered }) => {
     </div>
   );
 };
+
+PhotoIcons.propTypes = {
+  img: PropTypes.object.isRequired,
+  isHovered: PropTypes.bool.isRequired,
+}
 
 export default PhotoIcons;
