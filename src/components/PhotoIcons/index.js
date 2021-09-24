@@ -1,16 +1,10 @@
-import { useContext } from 'react';
-import { AppContext } from '../../Context';
+import HeartIcon from '../HeartIcon';
 
-const PhotoIcons = ({ id, isFavorite }) => {
-  const { updateIsFavorite } = useContext(AppContext);
+const PhotoIcons = ({ img, isHovered }) => {
 
-  const handleClick = () => {
-    updateIsFavorite(id, !isFavorite);
-  };
-  
   return (
     <div>
-      <i className='ri-heart-line favorite-icon' onClick={handleClick} />
+      <HeartIcon img={img} isHovered={isHovered} />
       <i className='ri-add-circle-line cart-icon' />
     </div>
   );
