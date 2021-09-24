@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import HeartIcon from '../HeartIcon';
+import CartIcon from '../CartIcon';
 
 const PhotoIcons = ({ img, isHovered }) => {
 
   return (
     <div>
       <HeartIcon img={img} isHovered={isHovered} />
-      <i className='ri-add-circle-line cart-icon' />
+      <CartIcon img={img} isHovered={isHovered} />
     </div>
   );
 };

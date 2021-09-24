@@ -6,6 +6,7 @@ const AppContext = React.createContext();
 
 const AppContextProvider = ({ children }) => {
   const [photos, setPhotos] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     getPhotos(setPhotos);
@@ -13,10 +14,12 @@ const AppContextProvider = ({ children }) => {
 
   const updateIsFavorite = (id, value) =>
     R.compose(setPhotos, updateFavorite(id, value))(photos);
+  
+  const addToCart = (img) => R.compose(setCartItems, R.append(img))(cartItems)
 
   return (
     photos && (
-      <AppContext.Provider value={{ photos, updateIsFavorite }}>
+      <AppContext.Provider value={{ photos, updateIsFavorite, cartItems, addToCart }}>
         {children}
       </AppContext.Provider>
     )
