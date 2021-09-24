@@ -13,4 +13,4 @@ export const updateFavorite = (id, value) =>
   R.map(R.when(R.propEq('id', id), R.assoc('isFavorite', value)));
 
 export const getClass = (index) =>
-  index % 5 === 0 ? 'big' : index % 6 === 0 ? 'wide' : 'normal';
+  index % 4 === 0 ? 'big' : index % 2 === 0 ? 'wide' : 'normal';
