@@ -16,10 +16,11 @@ const AppContextProvider = ({ children }) => {
     R.compose(setPhotos, updateFavorite(id, value))(photos);
   
   const addToCart = (img) => R.compose(setCartItems, R.append(img))(cartItems)
+  const removeFromCart = ({id}) => R.compose(setCartItems, R.reject(R.propEq('id', id)))(cartItems)
 
   return (
     photos && (
-      <AppContext.Provider value={{ photos, updateIsFavorite, cartItems, addToCart }}>
+      <AppContext.Provider value={{ photos, updateIsFavorite, cartItems, addToCart, removeFromCart }}>
         {children}
       </AppContext.Provider>
     )
