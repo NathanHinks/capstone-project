@@ -154,3 +154,8 @@ a:hover {
 a:active {
   color: var(--light);
 }
+
+*:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+}
