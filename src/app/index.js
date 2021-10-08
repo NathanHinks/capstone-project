@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 
-import Header from '../Header';
+import Header from '../components/Header';
 import Cart from '../pages/Cart';
 import PhotoGrid from '../pages/PhotoGrid';
 

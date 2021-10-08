@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { AppContext } from '../../Context';
-import { getClass } from '../../utils';
-import Photo from '../Photo';
+import { AppContext } from '../Context';
+import { getClass } from '../utils';
+import Photo from '../components/Photo';
 
 const PhotoGrid = () => {
   const { photos } = useContext(AppContext);
