@@ -1,12 +1,16 @@
 import * as R from 'ramda';
 
+const precision = 100;
+const getRandomPrice = () => Math.floor(Math.random() * (9 * precision) + precision) / (precision);
+
 export const getPhotos = async (setData) => {
   const res = await fetch(
     'https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json'
   );
   const data = await res.json();
 
-  setData(data);
+  R.compose(setData, R.map((item) => R.assoc('price', getRandomPrice(), item)
+  ))(data);
 };
 
 export const updateFavorite = (id, value) =>
