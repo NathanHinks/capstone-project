@@ -1,16 +1,16 @@
 import { useContext } from 'react';
-import { AppContext } from '../Context';
+import { PhotoContext } from '../contexts/PhotoContext';
 import { getClass } from '../utils';
 import Photo from '../components/Photo';
 
 const PhotoGrid = () => {
-  const { photos } = useContext(AppContext);
+  const { photos } = useContext(PhotoContext);
 
   return (
     <main className='photos'>
-      {photos.map((photo, i) => (
-        <Photo key={photo.id} img={photo} className={getClass(i)} />
-      ))}
+      { photos.map((photo, i) => (
+        <Photo key={ photo.id } img={ photo } className={ getClass(i) } />
+      )) }
     </main>
   );
 };

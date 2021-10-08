@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { cartActiveStyles, homeActiveStyles } from './activeStyles';
-import { AppContext } from '../../Context';
+import { CartContext } from '../../contexts/CartContext';
 
 const Header = () => {
-  const { cartIsEmpty } = useContext(AppContext);
+  const { cartIsEmpty } = useContext(CartContext);
   return (
     <header>
       <NavLink exact to='/' activeStyle={ homeActiveStyles }>

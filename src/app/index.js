@@ -1,5 +1,4 @@
 import { Route, Switch } from 'react-router-dom';
-
 import Header from '../components/Header';
 import Cart from '../pages/Cart';
 import PhotoGrid from '../pages/PhotoGrid';
@@ -10,7 +9,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path='/'>
-          <PhotoGrid/>
+          <PhotoGrid />
         </Route>
         <Route exact path='/cart'>
           <Cart />
@@ -18,6 +17,6 @@ const App = () => {
       </Switch>
     </div>
   );
-}
+};
 
 export default App;
