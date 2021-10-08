@@ -1,15 +1,16 @@
 import { useContext } from 'react';
 import CartItem from '../components/CartItem';
 import { CartContext } from '../contexts/CartContext';
+import { getTotal } from '../utils';
 
 const Cart = () => {
   const { cartItems } = useContext(CartContext);
-
+  const total = getTotal(cartItems);
   return (
     <main className="cart-page">
       <h1>Check out</h1>
       { cartItems.map(cartItem => <CartItem key={ cartItem.id } item={ cartItem } />) }
-      <p className="total-cost">Total: </p>
+      <p className="total-cost">Total: { total }</p>
       <div className="order-button">
         <button>Place Order</button>
       </div>

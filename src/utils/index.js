@@ -18,3 +18,7 @@ export const updateFavorite = (id, value) =>
 
 export const getClass = (index) =>
   index % 4 === 0 ? 'big' : index % 2 === 0 ? 'wide' : 'normal';
+
+export const formatNumber = (num) => num.toLocaleString("en-US", { style: "currency", currency: "USD" });
+
+export const getTotal = R.compose(formatNumber, R.sum, R.pluck('price'));

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { CartContext } from '../../contexts/CartContext';
+import { formatNumber } from '../../utils';
 
 const CartItem = ({ item }) => {
   const { removeFromCart } = useContext(CartContext);
@@ -11,7 +12,7 @@ const CartItem = ({ item }) => {
     <div className="cart-item">
       <i className="ri-delete-bin-line" onClick={ handleClick }></i>
       <img src={ item.url } width="130px" />
-      <p>${ item.price }</p>
+      <p>{ formatNumber(item.price) }</p>
     </div>
   );
 };
